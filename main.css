@@ -1,0 +1,50 @@
+.description{
+	font-size: 30px;
+	color: #666633;
+	border-left: 5px solid black;
+	padding: 30px;
+	width: 1000px;
+	background-color: #3399ff;
+	text-align: left;
+
+}
+
+.title
+{
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
+
+.image{
+	width: 400px;
+	height: 400px;
+	position: relative;
+	
+}
+
+.svg{
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	
+}
+
+.circ1{
+	stroke: black;
+	fill: #666633;
+	stroke-width: 5;
+	position: absolute; 
+	left:200px;
+	bottom:0;
+    background-color:rgba(0,0,0,.4);
+
+}
+
+.circ2{
+
+}
+
+.bar{
+
+}
