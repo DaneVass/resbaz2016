@@ -67,3 +67,20 @@ console.log(my_cat.height)
 var my_cats = [my_cat,my_cat2,my_cat3];
 
 console.log(my_cats)
+
+//copying arrays in javascript using map function
+//inline function to take each array element and return it as 
+//an element in the new array
+var new_array = my_array.map(function(my_array_element){
+	return my_array_element;
+}) //map function is buit into every js array inherently
+
+console.log(my_array);
+console.log(new_array);
+//filter function can be used to create a new array from filtered elements of an array
+filtered_array = my_array.filter(function(my_array_element){
+	return my_array_element > 1;
+})
+
+console.log(filtered_array);
+
