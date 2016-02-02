@@ -28,7 +28,12 @@ d3.json(dataUrl, function(nations) {
 
         var xAxis = d3.svg.axis().orient("bottom").scale(xScale);
 
-        canvas.append("g").call(xAxis);
+        canvas.append("g").call(xAxis).attr("transform", "translate(" + 0 + "," + canvas_height + ")");
 
+        var yScale = d3.scale.linear();
+        yScale.domain([0,100])
+        yScale.range([canvas_height,0]);
+        var yAxis = d3.svg.axis().orient("left").scale(yScale);
+        canvas.append("g").call(yAxis);
 })
 
