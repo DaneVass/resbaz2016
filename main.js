@@ -48,7 +48,7 @@ var sqrtscale = d3.scale.sqrt()
 sqrtscale.domain([0,5e8])
 sqrtscale.range([0,40])
 
-var colorscale = d3.scale.category20()
+var colorscale = d3.scale.category10()
 
 
 
@@ -78,6 +78,14 @@ d3.selectAll(".region_cb").on("change", function(){
 
 })
 
+var year_idx = document.getElementById("year_slider").value;
+
+d3.select("#year_slider").on("input", function(){
+    year_idx = parseInt(this.value);
+    console.log(typeof year_idx);
+    update()
+})
+
 update();
 
 
@@ -88,12 +96,15 @@ function update(){
                                 })
 
         magicald3linkingthing.enter().append("circle").attr("class","dot")
-                .attr("r", function(d){ return sqrtscale(d.population[0])})
-                .attr("cx", function(d){ return xScale(d.income[0])})
-                .attr("cy", function(d){ return yScale(d.lifeExpectancy[0])})
+
                 .style("fill",function(d){return colorscale(d.region)});
 
         magicald3linkingthing.exit().remove();
+
+        magicald3linkingthing.transition().ease("linear").duration(200)
+                .attr("r", function(d){ return sqrtscale(d.population[year_idx-1950])})
+                .attr("cx", function(d){ return xScale(d.income[year_idx-1950])})
+                .attr("cy", function(d){ return yScale(d.lifeExpectancy[year_idx-1950])})
 }
 
 
