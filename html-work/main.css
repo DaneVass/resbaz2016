@@ -5,8 +5,7 @@
 	padding: 30px;
 	width: 1000px;
 	background-color: #3399ff;
-	text-align: left;
-
+	text-align: center;
 }
 
 .title
@@ -19,25 +18,21 @@
 .image{
 	width: 400px;
 	height: 400px;
-	position: relative;
-	
+	left:50%;
 }
 
 .svg{
 	width: 400px;
 	height: 400px;
 	position: absolute;
-	left: 100px;
+	left: 1px;
 }
 
 .circ1{
 	stroke: black;
 	fill: #666633;
 	stroke-width: 5;
-	position: absolute; 
-	left:200px;
-	top:500px;
-    background-color:rgba(0,0,0,.4);
+	background-color:rgba(0,0,0,.6);
 
 }
 
@@ -45,12 +40,6 @@
 	stroke: black;
 	fill: #666633;
 	stroke-width: 5;
-	position: absolute; 
-	left:200px;
-	bottom:0;
-    background-color:rgba(0,0,0,.4);
+	background-color:rgba(0,0,0,.4);
 }
 
-.bridge{
-	
-}

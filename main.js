@@ -7,7 +7,7 @@ d3.json(dataUrl, function(nations) {
         // Create canvas inside frame.
         var canvas = frame.append("g");
         // create circle within g
-        var circles = canvas.append("circle")
+        //var circles = canvas.append("circle")
         // set dimensions of the frame
         var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5};
         var frame_width = 960;
@@ -20,7 +20,15 @@ d3.json(dataUrl, function(nations) {
         // Shift the canvas and make it slightly smaller than the svg canvas.
         canvas.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         //
-        circles.attr("cx",25).attr("cy",25).attr("fill","green").attr("stroke", "black").attr("r", 40).attr("stroke-width", "4px");
+        //circles.attr("cx",25).attr("cy",25).attr("fill","green").attr("stroke", "black").attr("r", 40).attr("stroke-width", "4px");
+
+        var xScale = d3.scale.log();
+        xScale.domain([250,1e5]);
+        xScale.range([0,canvas_width]);
+
+        var xAxis = d3.svg.axis().orient("bottom").scale(xScale);
+
+        canvas.append("g").call(xAxis);
 
 })
 
